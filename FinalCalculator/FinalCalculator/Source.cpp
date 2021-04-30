@@ -18,12 +18,13 @@ void averageGrade(int numtest) {
 		cin >> testval;
 		
 		arr[i] = testval;
+		//adds the results together
 		result += arr[i];
 	}
-	//loop to at the results together
 	
+	//divides the results by the number of test
 	result = result / numtest;
-
+	//displays the average
 	cout << "\nYour average for this category is: " << result << endl;
 	cout << "\n";
 
@@ -68,7 +69,7 @@ int main() {
 
 	cout << "***NOTE TO USER***\n When you enter your grade, if your grade is , for example\n a 92.16% enter the number .9216 this will also apply for the grade you\n want and the weight. Your result will also be calculated in this manner.\n So if it says you need a .281537 to pass then you really need a 28.15% to pass\n\n" << endl;
 
-
+	//system will ask user for info as long as they enter 1 when asked if they want to do another calculation
 	do {
 		//menu to ask the user what they want to do
 		cout << "\nMENU" << endl;
@@ -105,7 +106,7 @@ int main() {
 
 			break;
 
-
+//default case for invalid choice
 		default:
 			cout << "ERROR INVALID CHOICE!" << endl;
 			system("pause");
@@ -113,6 +114,8 @@ int main() {
 
 		}
 	}
+
+	//while redo equals 1 then we keep going through loop
 	while (redo == 1);
 
 	return 0;
