@@ -58,6 +58,45 @@ void finalexamcalc(void) {
 
 
 
+
+
+void weightcalc(int numgrades) {
+	float gradenum;
+	float weightnum;
+	//set max rediculously high 
+	float grade[1000];
+	float weight[1000];
+	float result = 0.0;
+
+	//loop to have th euser enter the test values
+	for (int i = 0; i < numgrades; i++) {
+		cout << "\nEnter Grade for test " << i + 1 << ":";
+		cin >> gradenum;
+		cout << "\nEnter Weight for test " << i + 1 << ":";
+		cin >> weightnum;
+
+
+		grade[i] = gradenum;
+		weight[i] = weightnum;
+		//adds the results together
+		result += (grade[i])*weight[i];
+	}
+
+	//divides the results by the number of test
+	
+	//displays the average
+	cout << "\nYour grade is: " << result << endl;
+	cout << "\n";
+
+
+
+
+
+
+}
+
+
+
 int main() {
 	
 	int redo;
@@ -75,6 +114,7 @@ int main() {
 		cout << "\nMENU" << endl;
 		cout << "1. Average a category" << endl;
 		cout << "2. Calculate what is needed on final to pass" << endl;
+		cout << "3. Calculate grade with weights" << endl;
 		cin >> choice;
 
 
@@ -105,6 +145,17 @@ int main() {
 			
 
 			break;
+
+
+
+
+
+		case 3:
+			int testnum;
+			cout << "\nHow many test do you need to enter?" << endl;
+			cin >> testnum;
+			//function to calculate the average with weights
+			weightcalc(testnum);
 
 //default case for invalid choice
 		default:
