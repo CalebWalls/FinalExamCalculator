@@ -72,7 +72,7 @@ void weightcalc(int numgrades) {
 	for (int i = 0; i < numgrades; i++) {
 		cout << "\nEnter Grade for test " << i + 1 << ":";
 		cin >> gradenum;
-		cout << "\nEnter Weight for test " << i + 1 << ":";
+		cout << "\nEnter Weight for category " << i + 1 << ":";
 		cin >> weightnum;
 
 
@@ -106,7 +106,7 @@ int main() {
 	cout << "FINAL EXAM CALCULATOR" << endl;
 	cout << "By: Caleb Walls\n\n" << endl;
 
-	cout << "***NOTE TO USER***\n When you enter your grade, if your grade is , for example\n a 92.16% enter the number .9216 this will also apply for the grade you\n want and the weight. Your result will also be calculated in this manner.\n So if it says you need a .281537 to pass then you really need a 28.15% to pass\n\n" << endl;
+	
 
 	//system will ask user for info as long as they enter 1 when asked if they want to do another calculation
 	do {
@@ -124,7 +124,10 @@ int main() {
 		case 1:
 
 			int numtest;
-
+			cout << "**NOTE: When entering test grades if you need to enter 5 test type 5." << endl;
+			cout << "Then, when you are asked to enter the test grade, if you made a 88 enter 88." << endl;
+			cout << "\nSample input: Enter Grade for test 2:88 " << endl;
+			cout << "______________________________________________________________________________________" << endl;
 			cout << "\nHow many test do you need to enter?" << endl;
 			cin >> numtest;
 			//function to calculate the average
@@ -136,6 +139,11 @@ int main() {
 			break;
 
 		case 2:
+
+			cout << "**NOTE: When you enter your grade, if your grade is, for example\n a 92.16 % enter the number .9216 this will also apply for the grade you\n want and the weight.Your result will also be calculated in this manner.\n So if it says you need a .281537 to pass then you really need a 28.15 % to pass\n\n" << endl;
+			cout << "Sample Input and output: " << endl;
+			cout << "Enter your current grade in the class:.9216\nEnter the grade you want in the class :.78\nEnter the weight of the final:.35\nYou need a 0.517029 on the final to get a 0.78" << endl;
+			cout << "_______________________________________________________________________________________________________________________" << endl;
 			//function to determine final exam
 			finalexamcalc();
 			//display menu again
@@ -151,11 +159,21 @@ int main() {
 
 
 		case 3:
+			cout << "**NOTE: When entering how many categories, say you have a category for homework,test,quizzes and projects,\n the number you would enter here is 4" << endl; \
+				cout << "When asked for the grade, if you made a 77 in the category, enter 77" << endl;
+			cout << "When asked for the weight, if the weight is 25% of your total grade, enter .25" << endl;
+			cout << "Sample input:How many categories do you need to enter?\n4\n Enter Grade for test 1:77\nEnter Weight for category 1:.25\nEnter Grade for test 2 : 88\nEnter Weight for category 2 : .25 " << endl;
+			cout << "..." << endl;
+			cout << "_________________________________________________________________________" << endl;
 			int testnum;
-			cout << "\nHow many test do you need to enter?" << endl;
+			cout << "\nHow many categories do you need to enter?" << endl;
 			cin >> testnum;
 			//function to calculate the average with weights
 			weightcalc(testnum);
+			cout << "\nWould you like to do another calculation ? If so type 1 otherwise type any other number: ";
+			cin >> redo;
+			break;
+
 
 //default case for invalid choice
 		default:
